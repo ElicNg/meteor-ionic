@@ -2,6 +2,7 @@ Template.ionView.rendered = function () {
   // Reset our transition preference
   IonNavigation.skipTransitions = false;
 
+  if (!Router.current().route) return;
   // Reset our scroll position
   var routePath = Router.current().route.path(Router.current().params);
   if(IonScrollPositions[routePath]) {
